@@ -16,13 +16,6 @@ module.exports = {
     },
     resolve: {
         extensions: [".js", ".jsx"]
-    },
-    devServer: {
-        contentBase: path.join(__dirname, "public"),
-        publicPath: "/javascripts/",
-        compress: true,
-        port: 3000,
-        openPage: 'http://localhost:3000'
-
     }
+
 };
