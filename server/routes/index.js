@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
     var templateDir=path.join(__dirname,"../../public/index.html" );
     var html = requireText(templateDir,require);
     res.end(html);
-
 });
 
 module.exports = router;
