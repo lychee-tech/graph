@@ -1,4 +1,4 @@
-import {GraphQLObjectType, GraphQLString} from "graphql"
+import {GraphQLObjectType, GraphQLString, GraphQLInputObjectType} from "graphql"
 
 class User {
     constructor(id, firstName, lastName) {
@@ -18,4 +18,12 @@ const UserType = new GraphQLObjectType( {
     }
 });
 
-export {User,UserType};
+const UserInputType = new GraphQLInputObjectType({
+    name:"userInput",
+    fields :{
+        firstName: {type:GraphQLString},
+        lastName:{type:GraphQLString}
+    }
+});
+
+export {User,UserType, UserInputType};
