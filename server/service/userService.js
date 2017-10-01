@@ -7,5 +7,13 @@ async function getUserById(userId) {
     return !entity? null: new User(entity["_id"].toString(), entity.firstName, entity.lastName);
 }
 
+async function countUsers(){
+    return UserEntity.count();
+}
 
-export {getUserById}
+async  function listUsers(){
+    var entities = await UserEntity.find() || [];
+    return entities.map(e => new User(e["_id"].toString(), e.firstName, e.lastName));
+}
+
+export {getUserById, countUsers, listUsers}
