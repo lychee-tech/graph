@@ -7,6 +7,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'public/dist/javascripts'),
         filename: 'bundle.js',
+        publicPath: "/dist/javascripts"
     },
     watch: true,
     module: {
@@ -25,7 +26,13 @@ module.exports = {
         compress: true,
         hotOnly: true,
         open:true,
-        port:3000
+        port:3000,
+        proxy: {
+            "/graphql": {
+                target: 'http://localhost:8000/',
+                secure: false
+            }
+        }
     },
 
 };
