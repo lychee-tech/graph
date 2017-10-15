@@ -10,7 +10,7 @@ class User {
 
 
 const UserType = new GraphQLObjectType( {
-    name:"user",
+    name:"User",
     fields:{
         id:{type:GraphQLString},
         firstName: {type: GraphQLString},
@@ -19,7 +19,7 @@ const UserType = new GraphQLObjectType( {
 });
 
 const UserInputType = new GraphQLInputObjectType({
-    name:"userInput",
+    name:"UserInput",
     fields :{
         firstName: {type:GraphQLString},
         lastName:{type:GraphQLString}

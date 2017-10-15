@@ -3,10 +3,9 @@ const path = require('path');
 const { introspectionQuery } = require('graphql/utilities');
 const { graphql } = require('graphql');
 
-var mySchema = require("../server/data/schema/schema");
+import  schema from "../server/data/schema/schema";
 
-
-graphql(mySchema, introspectionQuery)
+graphql(schema, introspectionQuery)
     .then(result => {
         fs.writeFileSync(
             path.join(__dirname, 'cache/schema.json'),

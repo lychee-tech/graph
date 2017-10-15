@@ -5,10 +5,8 @@ module.exports = {
     entry: ['./client/client.js',
        ],
     output: {
-        path: path.join(__dirname, 'dist/javascripts'),
+        path: path.join(__dirname, 'public/dist/javascripts'),
         filename: 'bundle.js',
-        publicPath: '/dist/javascripts'
-
     },
     watch: true,
     module: {

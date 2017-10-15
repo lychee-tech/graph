@@ -12,4 +12,4 @@ class User extends  Component {
 }
 
 
-export default Relay.createContainer(User, {fragments:{}});
+export default User;
