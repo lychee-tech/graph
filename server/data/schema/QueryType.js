@@ -5,14 +5,14 @@ import {getUserById, countUsers, listUsers} from "../../service/userService";
 const QueryType = new GraphQLObjectType ({
    name :"query",
    fields: {
-       getUserById: { type:  UserType,
+       user: { type:  UserType,
          resolve: (_, args)=> getUserById()
        },
-       countUsers:{
+       count:{
            type:GraphQLInt ,
            resolve: ()=> countUsers()
        },
-       listUsers: {
+       users: {
            type: new GraphQLList(UserType),
            resolve:() => listUsers()
        }

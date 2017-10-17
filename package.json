@@ -5,7 +5,8 @@
   "scripts": {
     "prod": "node ./server/start.js",
     "build": "webpack --config webpack-prod.config.js",
-    "dev": "webpack-dev-server --config webpack-dev.config.js --inline --hot"
+    "dev": "webpack-dev-server --config webpack-dev.config.js --inline --hot",
+    "schema":"babel-node ./tool/exportSchema.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
