@@ -5,10 +5,10 @@ import App from "./App";
 class AppRoute extends Relay.Route {
     static routeName = "App";
     static queries ={
-        user : (Component) => Relay.QL `
+        users : (Component) => Relay.QL `
          query {
-          user {
-            ${Component.getFragment("user")}
+          users {
+             ${Component.getFragment("users")}
           }
         }
         `

@@ -5,11 +5,19 @@ class User extends  Component {
     render() {
         return (
             <div>
-                this is the user component
+               this is a user {this.props.user.firstName}
             </div>
         )
     }
 }
 
 
-export default User;
+
+export default Relay.createContainer(User, {fragments: {
+    user: ()=>Relay.QL `
+       fragment user on User {
+        firstName,
+        lastName
+       }
+    `
+}});

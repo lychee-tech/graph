@@ -1,15 +1,19 @@
 import React, {Component} from "react";
 import Relay from "react-relay/classic";
-
+import User from "./User";
 
 
 class App extends  Component {
     render () {
-        console.log("hello", this.props.user);
+        console.log("hello", this.props.users);
 
         return (
             <div>
-                hello, world, {this.props.user.firstName}
+                hello, world
+                {
+                   this.props.users.allUsers.map(u => (<User key={u.id} user={u}/> ))
+
+                }
 
             </div>
         )
@@ -18,11 +22,12 @@ class App extends  Component {
 
 
 export default Relay.createContainer(App, {fragments: {
-    user: ()=>Relay.QL `
-       fragment OneUser on User {
-        id,
-        firstName,
-        lastName
+    users: ()=>Relay.QL `
+       fragment userList on UserList {
+         allUsers {
+           id, 
+           ${User.getFragment("user")} 
+         }
        }
     `
 }});

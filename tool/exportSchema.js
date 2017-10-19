@@ -11,6 +11,6 @@ graphql(schema, introspectionQuery)
             path.join(__dirname, 'cache/schema.json'),
             JSON.stringify(result, null, 2)
         );
-        console.log('Generated cached schema.json file');
+        console.log('cached schema.json file');
     })
     .catch(console.error);
