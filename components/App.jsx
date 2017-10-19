@@ -1,33 +1,16 @@
 import React, {Component} from "react";
+
 import Relay from "react-relay/classic";
-import User from "./User";
+import AppRoute from "./AppRoute";
+import UserList from "./UserList";
+
 
 
 class App extends  Component {
     render () {
-        console.log("hello", this.props.users);
-
-        return (
-            <div>
-                hello, world
-                {
-                   this.props.users.allUsers.map(u => (<User key={u.id} user={u}/> ))
-
-                }
-
-            </div>
-        )
+        return <Relay.RootContainer   Component={UserList}  route={new AppRoute()}/>
     }
 }
 
 
-export default Relay.createContainer(App, {fragments: {
-    users: ()=>Relay.QL `
-       fragment userList on UserList {
-         allUsers {
-           id, 
-           ${User.getFragment("user")} 
-         }
-       }
-    `
-}});
+export default App;
