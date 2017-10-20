@@ -6,7 +6,7 @@
     "prod": "node ./server/start.js",
     "build": "webpack --config webpack-prod.config.js",
     "dev": "webpack-dev-server --config webpack-dev.config.js --inline --hot",
-    "schema":"babel-node ./tool/exportSchema.js"
+    "schema": "babel-node ./tool/exportSchema.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -16,6 +16,7 @@
     "express": "~4.13.4",
     "express-graphql": "^0.6.11",
     "graphql": "^0.11.3",
+    "graphql-relay": "^0.5.3",
     "mongoose": "^4.11.13",
     "morgan": "~1.7.0",
     "path": "^0.12.7",
