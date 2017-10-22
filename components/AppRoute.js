@@ -7,7 +7,7 @@ class AppRoute extends Relay.Route {
     static queries ={
         users : (Component) => Relay.QL `
          query {
-          users {
+          userConnection {
              ${Component.getFragment("users")}
           }
         }
