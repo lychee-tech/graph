@@ -3,11 +3,23 @@ import Relay from "react-relay/classic";
 
 import User from "./User";
 class UserPage extends Component {
+    constructor(props){
+        super(props);
+        this.search = this.search.bind(this);
+    }
 
+    search(){
+        this.props.relay.setVariables({search:"changed"});
+    }
     render() {
         return (
+
+
             <div>
-                hello, world
+                <div>
+                    <input /> <button onClick={this.search}> Search </button>
+                </div>
+
                 {
                     this.props.users.connection.edges.map(e=> (<User key={e.node.id} user={e.node}/> ))
 
