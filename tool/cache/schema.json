@@ -49,53 +49,12 @@
               "deprecationReason": null
             },
             {
-              "name": "userConnection",
+              "name": "userPage",
               "description": null,
-              "args": [
-                {
-                  "name": "after",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "first",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "before",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "last",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Int",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
+              "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "UserConnection",
+                "name": "UserPage",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -191,6 +150,80 @@
                   "name": "User",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "UserPage",
+          "description": null,
+          "fields": [
+            {
+              "name": "connection",
+              "description": null,
+              "args": [
+                {
+                  "name": "after",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "first",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "before",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "last",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "search",
+                  "description": null,
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "UserConnection",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null

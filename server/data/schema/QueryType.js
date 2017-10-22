@@ -1,8 +1,8 @@
-import {GraphQLObjectType, GraphQLList, GraphQLInt}  from "graphql";
+import {GraphQLObjectType, GraphQLList, GraphQLInt, GraphQLString}  from "graphql";
 import {UserType} from "../model/User";
 import {UserListType} from "../model/UserList";
-import {UserConnectionType} from "../model/UserConnection";
 import {getUserById, countUsers, listUsers} from "../../service/userService";
+import {UserPageType} from "../model/UserPage";
 
 const {
     connectionDefinitions,
@@ -26,9 +26,8 @@ const QueryType = new GraphQLObjectType ({
            type: UserListType,
            resolve:() => listUsers()
        },
-       userConnection: {
-           type: UserConnectionType,
-           args: connectionArgs,
+       userPage: {
+           type: UserPageType,
            resolve:(_,args) => connectionFromPromisedArray(listUsers(), args)
        }
    }
