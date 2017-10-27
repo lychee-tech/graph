@@ -4,7 +4,7 @@ import Relay from "react-relay/classic";
 class User extends  Component {
     render() {
         return (
-            <div>
+            <div style={{backgroundColor:"red", height:"100px"}}>
                this is a user {this.props.user.firstName}
             </div>
         )
