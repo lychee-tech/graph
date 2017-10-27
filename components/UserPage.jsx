@@ -6,10 +6,12 @@ class UserPage extends Component {
     constructor(props){
         super(props);
         this.search = this.search.bind(this);
+        this.count=0;
     }
 
     search(){
-        this.props.relay.setVariables({search:"changed"});
+        this.count ++;
+        this.props.relay.setVariables({search:"changed" + this.count});
     }
     render() {
         return (
