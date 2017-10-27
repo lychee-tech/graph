@@ -1,4 +1,4 @@
-import {GraphQLObjectType, GraphQLString, GraphQLInputObjectType} from "graphql"
+import {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLInputObjectType} from "graphql"
 
 class User {
     constructor(id, firstName, lastName) {
@@ -15,6 +15,10 @@ const UserType = new GraphQLObjectType( {
         id:{type:GraphQLString},
         firstName: {type: GraphQLString},
         lastName: {type: GraphQLString},
+        likesCount:{
+            type: GraphQLInt,
+            resolve:()=>10
+        }
     }
 });
 
