@@ -1,5 +1,5 @@
 import {GraphQLObjectType, GraphQLString} from "graphql"
-import {UserType, User, UserInputType} from "../model/User";
+import {UserType, User, UserInputType} from "../model/user/User";
 
 const MutationType = new GraphQLObjectType({
     name:"mutation",

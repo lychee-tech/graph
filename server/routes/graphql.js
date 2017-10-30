@@ -7,7 +7,6 @@ import schema from "../data/schema/schema";
 
 
 
-
 router.use('/', graphqlHTTP({
     schema: schema,
     graphiql: true,

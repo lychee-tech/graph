@@ -1,4 +1,4 @@
-import {User} from "../data/model/User";
+import {User} from "../data/model/user/User";
 import {UserEntity} from "../data/entity/UserEntity";
 
 
