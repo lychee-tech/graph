@@ -7,6 +7,9 @@ import EmployeeType from "../model/school/Employee";
 import StaffType from "../model/school/Staff";
 
 const {
+    globalIdField,
+    fromGlobalId,
+    nodeDefinitions,
     connectionDefinitions,
     connectionArgs,
     connectionFromArray,
@@ -33,7 +36,7 @@ const QueryType = new GraphQLObjectType ({
            resolve:(_,args) => connectionFromPromisedArray(listUsers(), args)
        },
 
-       employee: {
+       employees: {
            type: new GraphQLList(EmployeeType),
            resolve:() => {
                return  [
