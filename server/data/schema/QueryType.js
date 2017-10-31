@@ -4,7 +4,8 @@ import {UserListType} from "../model/user/UserList";
 import {getUserById, countUsers, listUsers} from "../../service/userService";
 import {UserPageType} from "../model/user/UserPage";
 import EmployeeType from "../model/school/Employee";
-import ProductType from "../model/product/Product"
+import ProductType from "../model/product/Product";
+import {nodeInterface, nodeField} from "../model/node/node";
 
 const {
     globalIdField,
@@ -48,7 +49,8 @@ const QueryType = new GraphQLObjectType ({
        product: {
            type: ProductType,
            resolve: () => ({name :"pinapple"})
-       }
+       },
+       node : nodeField
    }
 });
 

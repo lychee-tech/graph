@@ -1,4 +1,18 @@
-import {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLInputObjectType} from "graphql"
+import {GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLInputObjectType} from "graphql";
+
+
+const {
+    globalIdField,
+    fromGlobalId,
+    nodeDefinitions,
+    connectionDefinitions,
+    connectionArgs,
+    connectionFromArray,
+    connectionFromPromisedArray
+} = require('graphql-relay');
+
+import {nodeField, nodeInterface} from "../node/node";
+
 
 class User {
     constructor(id, firstName, lastName) {
@@ -12,14 +26,16 @@ class User {
 const UserType = new GraphQLObjectType( {
     name:"User",
     fields:{
-        id:{type:GraphQLString},
+        id:globalIdField("User",(obj)=>obj.id),
         firstName: {type: GraphQLString},
         lastName: {type: GraphQLString},
         likesCount:{
             type: GraphQLInt,
             resolve:()=>10
         }
-    }
+    },
+    interfaces:[nodeInterface],
+    isTypeOf: (obj) => obj instanceof User
 });
 
 const UserInputType = new GraphQLInputObjectType({

@@ -6,7 +6,8 @@ const {
     connectionDefinitions,
     connectionArgs,
     connectionFromArray,
-    connectionFromPromisedArray
+    connectionFromPromisedArray,
+    nodeDefinitions
 } = require('graphql-relay');
 
 
